@@ -1,4 +1,3 @@
 datetime
-black
 pylint
 pytest

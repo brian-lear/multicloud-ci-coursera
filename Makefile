@@ -25,7 +25,7 @@ test:
 
 all-aws: install-aws lint test
 
-all-azure: install-azure format lint test
+all-azure: install-azure lint test
 
 all-gcp: install-gcp lint test
 
