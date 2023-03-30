@@ -6,11 +6,10 @@ def current_timestamp():
     return now
 
 
-def timestamp_to_binary(timestamp=None):
-    str_timestamp = str(timestamp)
-    if len(str_timestamp) == 0:
+def timestamp_to_binary(timestamp=None):    
+    if timestamp == None:
         timestamp = current_timestamp()
-        str_timestamp = str(timestamp)
+    str_timestamp = str(timestamp)
 
     # printing original string
     print("The original string is : " + str(str_timestamp))
