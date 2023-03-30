@@ -6,39 +6,46 @@
 # Setting up project
 * Create new repo in GitHub
 * Clone to VSCode
-* Add files main.py, Makefile, requirements.txt and test_main.py
-* Add commands to Makefile to install libs, format using black, use pylint and test using pytest
-* Test locally to see if everything is working
+* Add files `main.py`, `Makefile`, `requirements.txt` and `test_main.py`
+* Add commands to `Makefile` to install libs, format using `black`, use `pylint` and test using `pytest`
+* Create a python virtual environment and source it if not created
+
+```bash
+python3 -m venv ~/.myrepo
+source ~/.myrepo/bin/activate
+```
+
+* Test locally to see if everything is working by running `make all`
 
 # Setting up multicloud run
 * Add specific requirements for each cloud (-aws, -azure, -gcp)
-* Modify all command in Makefile to customize for each cloud
+* Modify all command in `Makefile` to customize for each cloud
 
 ## SSH
-* If SSH is not configured, run ssh-keygen -t rsa
+* If SSH is not configured, run `ssh-keygen -t rsa`
 * Get the public key destination and run cat "path"
 * Add the SSH to GitHub
 
 ## AWS
 * Log into AWS
 * Enter Cloud9
-* Run git clone and SSH path for the repo: git@github.com:brian-lear/multicloud-ci-coursera.git
-* Enter the folder with cd multicloud-ci-coursera
-* Run make all-aws
-* Check if all tests passed and output of main.py is displayed
+* Run `git clone` and SSH path for the repo: `git@github.com:brian-lear/multicloud-ci-coursera.git`
+* Enter the folder with `cd multicloud-ci-coursera`
+* Run `make all-aws`
+* Check if all tests passed and output of `main.py` is displayed
 
 ## Azure
 * Log into Azure
 * Use Cloud Shell
-* Run git clone and SSH path for the repo: git@github.com:brian-lear/multicloud-ci-coursera.git
-* Enter the folder with cd multicloud-ci-coursera
-* Run make all-azure
-* Check if all tests passed and output of main.py is displayed
+* Run `git clone` and SSH path for the repo: `git@github.com:brian-lear/multicloud-ci-coursera.git`
+* Enter the folder with `cd multicloud-ci-coursera`
+* Run `make all-azure`
+* Check if all tests passed and output of `main.py` is displayed
 
 ## GCP
 * Log into Azure
 * Use Cloud Shell
-* Run git clone and SSH path for the repo: git@github.com:brian-lear/multicloud-ci-coursera.git
-* Enter the folder with cd multicloud-ci-coursera
-* Run make all-gcp
-* Check if all tests passed and output of main.py is displayed
+* Run `git clone` and SSH path for the repo: `git@github.com:brian-lear/multicloud-ci-coursera.git`
+* Enter the folder with `cd multicloud-ci-coursera`
+* Run `make all-gcp`
+* Check if all tests passed and output of `main.py` is displayed
