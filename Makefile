@@ -23,7 +23,7 @@ lint:
 test:
 	python -m pytest -vv test_main.py
 
-all-aws: install-aws format lint test
+all-aws: install-aws lint test
 
 all-azure: install-azure format lint test
 
