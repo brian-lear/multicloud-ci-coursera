@@ -17,6 +17,41 @@ source ~/.myrepo/bin/activate
 
 * Test locally to see if everything is working by running `make all`
 
+# Create a trigger for GitHub Actions
+* Create a `.github/workflows`folder
+* Create a `.yaml` inside it
+* Add the following script to trigger on push
+
+```name: Multi Cloud application with Github Actions
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.8
+    - name: Install dependencies
+      run: |
+        make install
+    - name: Format code
+      run: |
+        make format
+    - name: Lint with pylint
+      run: |
+        make lint
+    - name: Test with pytest
+      run: |
+        make test
+
+```
+
 # Setting up multicloud run
 * Add specific requirements for each cloud (-aws, -azure, -gcp)
 * Modify all command in `Makefile` to customize for each cloud
